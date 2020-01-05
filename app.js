@@ -15,6 +15,13 @@ const recherche = async function (personnage) {
                     info += '<div class="container"><div class="row">';
                     info += '<div class="col-md-6"><img class="img-fluid" src="'+u.image.url+'" alt="'+u.name+'"></div>';
                     info += '<div class="col-md-6"><h1 class="text-center">'+u.name+'</h1>';
+                    info += '<h3 class="text-center">'+u.biography.alignment+'</h3>';
+                    
+                    for (let [key, value] of Object.entries(u.biography)) {
+                        if (key === "full-name"){
+                        info += '<p>'+(`${key}: ${value}`)+'</p>';
+                        }
+                     }
                     for (let [key, value] of Object.entries(u.appearance)) {
                         info += '<p>'+(`${key}: ${value}`)+'</p>';
                      }
